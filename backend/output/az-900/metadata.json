@@ -1,0 +1,23 @@
+{
+  "certification": {
+    "cert_id": "az-900",
+    "title": "Azure Fundamentals",
+    "url": "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/",
+    "learning_paths": [
+      {
+        "title": "Accelerate cloud adoption with the Microsoft Cloud Adoption Framework for Azure",
+        "slug": "accelerate-cloud-adoption-with-the-microsoft-cloud-adoption-framework-for-azure",
+        "description": "",
+        "url": "https://learn.microsoft.com/en-us/training/paths/cloud-adoption-framework/",
+        "modules": []
+      }
+    ],
+    "scraped_at": "2026-05-17T19:19:42.838600Z"
+  },
+  "scraped_at": "2026-05-17T19:19:42.838600+00:00",
+  "stats": {
+    "learning_paths": 1,
+    "total_modules": 0,
+    "total_units": 0
+  }
+}
