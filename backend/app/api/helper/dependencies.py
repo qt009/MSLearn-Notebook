@@ -1,6 +1,6 @@
 from functools import lru_cache
 
-from app.config import Settings, get_settings
+from app.config.config import Settings, get_settings
 from app.services.job_tracker import JobTracker
 from app.services.scraper_service import ScraperService
 from app.storage.file_store import FileContentRepository

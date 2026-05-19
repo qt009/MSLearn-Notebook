@@ -2,8 +2,8 @@ import logging
 
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 
-from app.api.dependencies import get_scraper_service
-from app.api.schemas import (
+from app.api.helper.dependencies import get_scraper_service
+from app.model.schemas import (
     CertificationListResponse,
     CertificationResponse,
     JobResponse,

@@ -15,7 +15,7 @@ from typing import Callable
 
 import httpx
 
-from app.config import Settings
+from app.config.config import Settings
 from app.domain.exceptions import (
     NetworkError,
     PageNotFoundError,

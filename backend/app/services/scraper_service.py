@@ -2,7 +2,7 @@ import logging
 from datetime import datetime, timezone, timedelta
 from functools import partial
 
-from app.config import Settings
+from app.config.config import Settings
 from app.domain.enums import JobStatus
 from app.domain.exceptions import (
     CertificationNotFoundError,
