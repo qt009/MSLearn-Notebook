@@ -8,7 +8,6 @@ Uses the Factory pattern for HTTP client selection (httpx by default)
 and the Observer pattern for progress reporting. Respects rate limits
 via asyncio.Semaphore and configurable delays.
 """
-
 import asyncio
 import logging
 from typing import Callable
@@ -88,7 +87,7 @@ class MSLearnCrawler:
             ScraperError: if scraping fails
         """
         cert_info = self._settings.supported_certifications[cert_id]
-        cert_url = self._settings.get_cert_url(cert_id, "cert_page_path")
+        course_url = self._settings.get_course_url(cert_id)
 
         logger.info("Starting crawl for %s: %s", cert_id, cert_info["title"])
         on_progress("Initializing", 0.0, f"Starting scrape of {cert_id}")
@@ -102,9 +101,9 @@ class MSLearnCrawler:
             },
         ) as client:
             # Step 1: Get learning path links
-            on_progress("Discovering learning paths", 0.05, cert_url)
+            on_progress("Discovering learning paths", 0.05, course_url)
             learning_paths = await self._discover_learning_paths(
-                client, cert_id, cert_url
+                client, cert_id, course_url
             )
 
             # Step 2: For each learning path, discover modules and units
@@ -127,7 +126,7 @@ class MSLearnCrawler:
         return Certification(
             cert_id=cert_id,
             title=cert_info["title"],
-            url=cert_url,
+            url=course_url,
             learning_paths=populated_paths,
         )
 

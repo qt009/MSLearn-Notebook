@@ -56,17 +56,17 @@ class JobTracker:
             job_id, progress * 100, step, detail,
         )
 
-    def mark_scraping(self, job_id: str) -> None:
+    def mark_status_scraping(self, job_id: str) -> None:
         job = self._jobs.get(job_id)
         if job:
             job.status = JobStatus.SCRAPING
 
-    def mark_generating(self, job_id: str) -> None:
+    def mark_status_generating(self, job_id: str) -> None:
         job = self._jobs.get(job_id)
         if job:
             job.status = JobStatus.GENERATING
 
-    def mark_completed(self, job_id: str) -> None:
+    def mark_status_completed(self, job_id: str) -> None:
         job = self._jobs.get(job_id)
         if job:
             job.status = JobStatus.COMPLETED
@@ -74,7 +74,7 @@ class JobTracker:
             job.completed_at = datetime.now(timezone.utc)
             logger.info("Job %s completed", job_id)
 
-    def mark_failed(self, job_id: str, error: str) -> None:
+    def mark_status_failed(self, job_id: str, error: str) -> None:
         job = self._jobs.get(job_id)
         if job:
             job.status = JobStatus.FAILED

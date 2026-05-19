@@ -67,7 +67,7 @@ class ScraperService:
     async def run_scrape(self, job_id: str, cert_id: str) -> None:
         """Execute the scraping pipeline as a background task."""
         try:
-            self._job_tracker.mark_scraping(job_id)
+            self._job_tracker.mark_status_scraping(job_id)
 
             progress_cb = partial(
                 self._job_tracker.update_progress, job_id
@@ -83,15 +83,15 @@ class ScraperService:
             )
             await self._repository.save_certification(certification)
 
-            self._job_tracker.mark_completed(job_id)
+            self._job_tracker.mark_status_completed(job_id)
             logger.info("Scrape job %s completed for %s", job_id, cert_id)
 
         except ScraperError as e:
-            self._job_tracker.mark_failed(job_id, str(e))
+            self._job_tracker.mark_status_failed(job_id, str(e))
             logger.error("Scrape job %s failed: %s", job_id, e)
 
         except Exception as e:
-            self._job_tracker.mark_failed(job_id, f"Unexpected error: {e}")
+            self._job_tracker.mark_status_failed(job_id, f"Unexpected error: {e}")
             logger.exception("Scrape job %s failed unexpectedly", job_id)
 
     def get_job_status(self, job_id: str) -> dict | None:

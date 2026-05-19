@@ -24,6 +24,7 @@ class CertificationInfo:
             "description": "Demonstrate foundational knowledge of cloud concepts, core Azure services, plus Azure management and governance features and tools.",
             "study_guide_path": "/credentials/certifications/resources/study-guides/az-900",
             "cert_page_path": "/credentials/certifications/azure-fundamentals/",
+            "course_path": "/training/courses/az-900t00"
         },
     }
 
@@ -50,6 +51,9 @@ class Settings(BaseSettings):
         if cert is None:
             raise ValueError(f"Unsupported certification: {cert_id}")
         return f"{self.ms_learn_base_url}{cert[path_type]}"
+
+    def get_course_url(self, cert_id: str) -> str:
+        return self.get_cert_url(cert_id, "course_path")
 
 
 @lru_cache
