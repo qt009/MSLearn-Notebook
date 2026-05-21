@@ -14,20 +14,20 @@ from typing import Callable
 
 import httpx
 
-from app.config.config import Settings
-from app.domain.exceptions import (
+from app.core.config.config import Settings
+from app.core.domain.exceptions import (
     NetworkError,
     PageNotFoundError,
     RateLimitError,
     ContentParsingError,
 )
-from app.domain.models import (
+from app.core.domain.models import (
     Certification,
     LearningPath,
     Module,
     UnitContent,
 )
-from app.scraper.parser import (
+from app.ScraperService.domain.parser import (
     LearningPathExtractor,
     ModuleExtractor,
     UnitExtractor,

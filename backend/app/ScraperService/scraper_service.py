@@ -2,15 +2,15 @@ import logging
 from datetime import datetime, timezone, timedelta
 from functools import partial
 
-from app.config.config import Settings
-from app.domain.enums import JobStatus
-from app.domain.exceptions import (
+from app.core.config.config import Settings
+from app.TrackerService.domain.enums import JobStatus
+from app.core.domain.exceptions import (
     CertificationNotFoundError,
     ScraperError,
 )
-from app.domain.models import Certification
-from app.scraper.crawler import MSLearnCrawler
-from app.services.job_tracker import JobTracker
+from app.core.domain.models import Certification
+from app.ScraperService.domain.crawler import MSLearnCrawler
+from app.TrackerService.job_tracker import JobTracker
 from app.storage.file_store import FileContentRepository
 
 logger = logging.getLogger(__name__)

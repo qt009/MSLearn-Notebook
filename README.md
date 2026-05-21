@@ -17,6 +17,8 @@ Scrapes Microsoft Learn certification study content and generates PDF study note
 
 ## Getting Started
 
+- Create an .env file based on .env.template
+
 ```bash
 # Backend
 cd backend
@@ -40,9 +42,12 @@ uvicorn app.main:app --reload
 ```
 backend/
   app/
-    api/          # Routes, schemas, dependency injection
-    domain/       # Models, enums, exceptions
-    scraper/      # Crawler, HTML parsers
-    services/     # Business logic, job tracking
-    storage/      # File-based persistence
+    api/ 
+    core/ 
+    ScraperServices/
+    TrackerServices/
+    storage/
+    
+  tests/
+    output/
 ```

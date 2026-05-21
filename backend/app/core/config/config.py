@@ -37,7 +37,7 @@ class Settings(BaseSettings):
     )
 
     ms_learn_base_url: str = "https://learn.microsoft.com/en-us"
-    output_dir: Path = Field(default=Path("output"))
+    output_dir: Path = Field(default=Path("tests/output"))
     scrape_delay_seconds: float = 1.0
     max_concurrent_requests: int = 5
     log_level: str = "INFO"

@@ -3,14 +3,18 @@ import logging
 from fastapi import APIRouter, BackgroundTasks, HTTPException
 
 from app.api.helper.dependencies import get_scraper_service
-from app.model.schemas import (
+from app.core.model.schemas import (
     CertificationListResponse,
     CertificationResponse,
-    JobResponse,
-    ScrapeRequest,
-    ScrapeStartResponse,
 )
-from app.domain.exceptions import CertificationNotFoundError, JobNotFoundError
+
+from app.ScraperService.model.scrape import (
+    ScrapeRequest,
+    ScrapeStartResponse
+)
+from app.TrackerService.model.job import JobResponse
+
+from app.core.domain.exceptions import CertificationNotFoundError, JobNotFoundError
 
 logger = logging.getLogger(__name__)
 

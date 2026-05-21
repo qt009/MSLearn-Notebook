@@ -3,7 +3,7 @@ import logging
 from datetime import datetime, timezone
 from dataclasses import dataclass, field
 
-from app.domain.enums import JobStatus
+from app.TrackerService.domain.enums import JobStatus
 
 logger = logging.getLogger(__name__)
 

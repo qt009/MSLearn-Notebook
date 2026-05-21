@@ -7,8 +7,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.api.routes import router
-from app.config.config import get_settings
-from app.domain.exceptions import (
+from app.core.config.config import get_settings
+from app.core.domain.exceptions import (
     CertificationNotFoundError,
     JobNotFoundError,
     ScraperError,

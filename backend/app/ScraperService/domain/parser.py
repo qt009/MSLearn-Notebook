@@ -4,8 +4,8 @@ from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup, Tag
 
-from app.domain.exceptions import ContentParsingError
-from app.domain.models import ImageRef, UnitContent
+from app.core.domain.exceptions import ContentParsingError
+from app.core.domain.models import ImageRef, UnitContent
 
 logger = logging.getLogger(__name__)
 

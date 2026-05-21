@@ -3,8 +3,8 @@ import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
-from app.domain.exceptions import StorageError
-from app.domain.models import Certification
+from app.core.domain.exceptions import StorageError
+from app.core.domain.models import Certification
 
 logger = logging.getLogger(__name__)
 
@@ -12,8 +12,8 @@ logger = logging.getLogger(__name__)
 class FileContentRepository:
     """
     Persists certification data to disk:
-      output/{cert_id}/metadata.json
-      output/{cert_id}/raw_html/path-{nn}/module-{nn}/unit-{nn}.html
+      tests/output/{cert_id}/metadata.json
+      tests/output/{cert_id}/raw_html/path-{nn}/module-{nn}/unit-{nn}.html
     """
 
     def __init__(self, output_dir: Path):

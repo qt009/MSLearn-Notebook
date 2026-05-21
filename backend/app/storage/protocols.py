@@ -1,7 +1,7 @@
 from datetime import datetime
 from typing import Protocol, runtime_checkable
 
-from app.domain.models import Certification
+from app.core.domain.models import Certification
 
 
 @runtime_checkable

@@ -1,6 +1,6 @@
 from typing import Protocol, runtime_checkable
 
-from app.domain.models import UnitContent
+from app.core.domain.models import UnitContent
 
 
 @runtime_checkable
