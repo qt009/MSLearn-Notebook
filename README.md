@@ -37,6 +37,11 @@ uvicorn app.main:app --reload
 | `GET` | `/api/jobs/{job_id}` | Poll job status |
 | `GET` | `/api/health` | Health check |
 
+
+# Important Links
+https://learn.microsoft.com/en-us/training/support/integrations-learn-platform-api-catalog
+https://learn.microsoft.com/en-us/training/support/integrations-learn-platform-api-catalog-quickstart
+
 ## Project Structure
 
 ```
